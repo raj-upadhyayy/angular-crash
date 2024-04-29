@@ -1,13 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
+import { TaskItemComponent } from './components/task-item/task-item.component';
+import { mockTasks } from './app.mock';
+import { Task } from './app.types';
+import { TaskSectionComponent } from './components/task-section/task-section.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HeaderComponent, TaskItemComponent, TaskSectionComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'angular-crash';
+  tasks: Task[] = mockTasks;
 }
