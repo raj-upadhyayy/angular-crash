@@ -1,7 +1,13 @@
 <div class="task">
   <h3>
-    {{ task?.text }}
-    <fa-icon [icon]="closeIcon" [ngStyle]="{ color: 'red' }"/>
+    {{ product?.title }}
+    <fa-icon
+      [icon]="closeIcon"
+      [ngStyle]="{ color: 'red' }"
+      (click)="onDeleteClick(product)"
+      *ngIf="!isLoading"
+    />
+    <p *ngIf="isLoading" class="loading">Loading..</p>
   </h3>
-  <p >{{ task?.day }}</p>
+  <p>{{ product?.description }}</p>
 </div>

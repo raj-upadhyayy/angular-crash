@@ -6,6 +6,7 @@ import { mockTasks } from './app.mock';
 import { Task } from './app.types';
 import { TaskSectionComponent } from './components/task-section/task-section.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +16,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HeaderComponent,
     TaskItemComponent,
     TaskSectionComponent,
-    FontAwesomeModule,
+    HttpClientModule,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',

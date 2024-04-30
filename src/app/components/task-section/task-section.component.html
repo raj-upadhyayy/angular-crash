@@ -1,5 +1,10 @@
 <div [ngStyle]="{ 'margin-top': '20px' }">
-  @for (task of tasks; track task) {
-  <app-task-item [task]="task" />
+  <div *ngIf="loading">Loading...</div>
+  @for (product of products; track product) {
+  <app-task-item
+    [product]="product"
+    (onClick)="onDelete(product)"
+    [isLoading]="itemDeletingId === product.id"
+  />
   }
 </div>

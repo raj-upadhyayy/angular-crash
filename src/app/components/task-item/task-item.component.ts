@@ -1,5 +1,5 @@
-import { Component, Input, input } from '@angular/core';
-import { Task } from '../../app.types';
+import { Component, EventEmitter, Input, Output, input } from '@angular/core';
+import { Product, Task } from '../../app.types';
 import { faClose, faCoffee } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CommonModule } from '@angular/common';
@@ -12,6 +12,12 @@ import { CommonModule } from '@angular/common';
   styleUrl: './task-item.component.css',
 })
 export class TaskItemComponent {
-  @Input() task: Task | undefined;
+  @Input() product: Product | undefined;
+  @Input() isLoading: boolean | undefined;
+  @Output() onClick = new EventEmitter();
   closeIcon = faClose;
+
+  onDeleteClick(product?: Product) {
+    this.onClick.emit(product);
+  }
 }
