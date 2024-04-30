@@ -1,3 +1,5 @@
-@for (task of tasks; track task) {
-<app-task-item [task]="task" />
-}
+<div [ngStyle]="{ 'margin-top': '20px' }">
+  @for (task of tasks; track task) {
+  <app-task-item [task]="task" />
+  }
+</div>

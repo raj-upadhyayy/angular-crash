@@ -5,11 +5,18 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { mockTasks } from './app.mock';
 import { Task } from './app.types';
 import { TaskSectionComponent } from './components/task-section/task-section.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HeaderComponent, TaskItemComponent, TaskSectionComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    TaskItemComponent,
+    TaskSectionComponent,
+    FontAwesomeModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
