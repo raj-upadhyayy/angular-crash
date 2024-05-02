@@ -1,4 +1,8 @@
-<div class="task">
+<div
+  class="task"
+  [ngClass]="product?.isBought ? 'reminder' : ''"
+  (click)="onEditClick(product)"
+>
   <h3>
     {{ product?.title }}
     <fa-icon
@@ -9,5 +13,5 @@
     />
     <p *ngIf="isLoading" class="loading">Loading..</p>
   </h3>
-  <p>{{ product?.description }}</p>
+  <p>{{ product?.price }}</p>
 </div>

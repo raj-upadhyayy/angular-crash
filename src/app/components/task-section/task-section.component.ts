@@ -1,5 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  input,
+} from '@angular/core';
 import { mockTasks } from '../../app.mock';
 import { TaskItemComponent } from '../task-item/task-item.component';
 import { BaseService } from '../../services/base-service.service';
@@ -14,28 +21,22 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./task-section.component.css'], // Corrected property name and array notation
 })
 export class TaskSectionComponent implements OnInit {
-  loading: boolean = true;
-  products: Product[] = []; // Assuming 'tasks' will be filled with data
-  itemDeletingId: number | null = null;
+  @Input() loading: boolean | undefined;
+  @Input() products: Product[] | undefined; // Assuming 'tasks' will be filled with data
+  @Input() itemDeletingId: number | null | undefined;
+  @Output() onDelete = new EventEmitter();
+  @Output() onEdit = new EventEmitter();
 
-  constructor(private baseService: BaseService) {}
 
-  ngOnInit(): void {
-    this.baseService.getProducts().subscribe((response) => {
-      this.products = response.products.length > 0 ? response.products : [];
-      this.loading = false;
-    });
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  onDeleteClick(product: Product) {
+    this.onDelete.emit(product);
   }
 
-  onDelete(product: Product) {
-    this.itemDeletingId = product.id;
-    this.baseService.deleteProduct(product.id).subscribe((response) => {
-      if (response.id === product.id) {
-        this.products = this.products.filter((item) => item.id !== product.id);
-      } else {
-        alert('Something went wrong');
-      }
-      this.itemDeletingId = null;
-    });
+  onEditClick(productId: string) {
+    this.onEdit.emit(productId);
   }
 }

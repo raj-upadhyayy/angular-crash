@@ -17,6 +17,7 @@ export interface Product {
   category: string;
   thumbnail: string;
   images: string[];
+  isBought?: boolean;
 }
 
 export interface ProductResponse {

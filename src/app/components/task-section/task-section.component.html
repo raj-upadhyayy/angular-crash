@@ -3,7 +3,8 @@
   @for (product of products; track product) {
   <app-task-item
     [product]="product"
-    (onClick)="onDelete(product)"
+    (onDelete)="onDeleteClick($event)"
+    (onEdit)="onEditClick($event)"
     [isLoading]="itemDeletingId === product.id"
   />
   }

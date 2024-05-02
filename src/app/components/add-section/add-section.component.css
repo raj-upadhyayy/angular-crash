@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif; /* Sets the font for the form */
+    background: #f4f4f9; /* Light grey background for the page */
+    padding: 20px; /* Adds padding around the form */
+  }
+  
+  form {
+    background: #fff; /* White background for the form */
+    padding: 20px; /* Adds padding inside the form */
+    border-radius: 8px; /* Rounded corners for the form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow around the form */
+    max-width: 500px; /* Maximum width of the form */
+    margin: 40px auto; /* Centers the form horizontally */
+  }
+  
+  .form-group {
+    margin-bottom: 20px; /* Adds space between form groups */
+  }
+  
+  label {
+    display: block; /* Makes the label a block element to influence full width */
+    margin-bottom: 5px; /* Adds a small space below the label */
+    font-weight: bold; /* Makes text bold */
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: 100%; /* Full width inputs */
+    padding: 10px; /* Padding inside the inputs */
+    border: 1px solid #ccc; /* Border around the inputs */
+    border-radius: 4px; /* Rounded corners on inputs */
+  }
+  
+
+  .form-check {
+    display: flex;
+    align-items: center; /* Vertically aligns the checkbox and label text */
+    margin: 20px 0;
+  }
+  
+  .form-check-label {
+    display: flex;
+    align-items: center; /* Ensures the text aligns properly with the checkbox */
+    cursor: pointer;
+    margin-left: 5px; /* Provides some space between the checkbox and the text */
+    user-select: none; /* Prevents text selection */
+  }
+  
+  .form-check-input {
+    margin-top: 0;
+    margin-right: 5px; /* Space between checkbox and label text */
+    height: 20px;
+    width: 20px;
+  }
+  
+  
+  .btn {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+.btn:disabled, .btn[disabled] {
+    background-color: #cccccc; /* Light grey background */
+    color: #666666; /* Darker grey text */
+    cursor: not-allowed; /* Shows a 'not allowed' cursor on hover */
+  }
+  
+  .btn:not(:disabled):hover {
+    background-color: #0056b3; /* Only apply hover effect if button is not disabled */
+  }
+  

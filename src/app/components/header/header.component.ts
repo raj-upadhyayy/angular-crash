@@ -1,4 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnInit,
+  Output,
+  input,
+} from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 
 @Component({
@@ -10,8 +17,11 @@ import { ButtonComponent } from '../button/button.component';
 })
 export class HeaderComponent implements OnInit {
   @Input() title: string | undefined;
+  @Input() isAddSectionEnabled: boolean | undefined;
+  @Output() onToggle = new EventEmitter();
+  constructor() {}
   ngOnInit(): void {}
   OnClick() {
-    console.log('test')
+    this.onToggle.emit();
   }
 }

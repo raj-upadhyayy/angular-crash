@@ -14,10 +14,19 @@ import { CommonModule } from '@angular/common';
 export class TaskItemComponent {
   @Input() product: Product | undefined;
   @Input() isLoading: boolean | undefined;
-  @Output() onClick = new EventEmitter();
+  @Output() onDelete = new EventEmitter();
+  @Output() onEdit = new EventEmitter();
+
   closeIcon = faClose;
 
   onDeleteClick(product?: Product) {
-    this.onClick.emit(product);
+    console.log('hit 2')
+    this.onDelete.emit(product);
   }
+
+  onEditClick(product?: Product) {
+    console.log('hit')
+    this.onEdit.emit(product?.id);
+  }
+
 }
