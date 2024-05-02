@@ -1,15 +1,3 @@
 <div class="container">
-  <app-header
-    [title]="title"
-    [isAddSectionEnabled]="isAddSectionEnabled"
-    (onToggle)="onToggle()"
-  />
-  <app-add-section *ngIf="isAddSectionEnabled" (onAdd)="onAdd($event)" />
-  <app-task-section
-    [loading]="loading"
-    [products]="products"
-    [itemDeletingId]="itemDeletingId"
-    (onDelete)="onDelete($event)"
-    (onEdit)="onEdit($event)"
-  />
+  <router-outlet></router-outlet>
 </div>

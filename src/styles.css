@@ -14,7 +14,6 @@ body {
   max-width: 500px;
   margin: 30px auto;
   overflow: auto;
-  min-height: 300px;
   border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
@@ -73,4 +72,12 @@ body {
 .form-control-check input {
   flex: 2;
   height: 20px;
+}
+
+a {
+  text-decoration: none; /* Removes underline */
+  color: red; /* Bootstrap-like blue */
+  padding: 8px 15px; /* Adds some padding */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
 }

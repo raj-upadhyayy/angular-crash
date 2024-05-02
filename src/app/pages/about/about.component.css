@@ -1,0 +1,10 @@
+.page-container {
+    display: flex;
+    position: relative;
+    flex-direction: column; /* Ensures vertical stacking */
+}
+
+a {
+    text-decoration: none; /* Removes underline */
+    margin-top: 150px; /* Ensure this is not being overridden */
+}
